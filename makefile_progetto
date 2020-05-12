@@ -1,0 +1,16 @@
+all: main_iplib.o ip_lib.o bmp.o
+	gcc main_iplib.o ip_lib.o bmp.o -o progetto -Wall --ansi --pedantic -lm -g3 -O3 -fsanitize=address
+-fsanitize=undefined -std=gnu89 -Wextra
+
+main_iplib.o: main_iplib.c
+	gcc -c main_iplib.c
+
+ip_lib.o: ip_lib.c
+	gcc -c ip_lib.c -Wall --ansi --pedantic -lm -g3 -O3 -fsanitize=address
+-fsanitize=undefined -std=gnu89 -Wextra
+
+bmp.o: bmp.c
+	gcc -c bmp.c
+
+clean:
+	rm -f *.o progetto

@@ -1,0 +1,8 @@
+all: test_bmp.o bmp.o
+	gcc -Wall test_bmp.o bmp.o -o es -lm
+
+test_bmp.o: test_bmp.c
+	gcc -c test_bmp.c -Wall 
+
+bmp.o: bmp.c
+	gcc -c bmp.c -Wall
